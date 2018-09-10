@@ -12,6 +12,7 @@ public enum GameState {
     case running
     case crossWon
     case naughtWon
+    case draw
     
     var isOver: Bool {
         return self != .running
@@ -26,6 +27,10 @@ public enum TurnType {
         return self == .Naught ? .Cross: .Naught
     }
     
+    var symbol: String {
+        return self == .Naught ? "O" : "X"
+    }
+    
     mutating func flip() {
         self = self.opposite
     }
@@ -33,7 +38,7 @@ public enum TurnType {
 
 public class Game {
     let board = Board()
-    public private(set) var winState = GameState.running
+    public private(set) var state = GameState.running
     public private(set) var currentTurn = TurnType.Naught
     
     func selectSlot(at sqId: SquareIdentifier) {
@@ -47,16 +52,12 @@ public class Game {
     
     func checkState() {
         let boardState = board.getState()
-        if boardState.isTaken() {
-            winState = boardState == .Cross ? .crossWon : .naughtWon
-        } else {
-            winState = .running
-        }
+        state = boardState
     }
     
     func reset() {
         board.reset()
-        winState = .running
+        state = .running
         currentTurn = .Naught
     }
 }

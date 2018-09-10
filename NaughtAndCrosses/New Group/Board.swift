@@ -87,8 +87,17 @@ class Board {
         squares = initSquares
     }
     
-    func getState() -> SquareState {
+    func getState() -> GameState {
         //TODO: implement checks
-        return .Empty
+        var allTaken = true
+        
+        for (_, sqState) in squares {
+            if !sqState.isTaken() {
+                allTaken = false
+                break
+            }
+        }
+        
+        return allTaken ? .draw : .running
     }
 }

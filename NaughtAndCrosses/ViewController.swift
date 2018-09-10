@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var gameStateLabel: UILabel!
     
     @IBOutlet weak var topLeftButton: UIButton!
     @IBOutlet weak var topMiddleButton: UIButton!
@@ -56,6 +57,18 @@ class ViewController: UIViewController {
     }
     
     func updateView() {
+        if (game.state.isOver) {
+            var gameLabelText = ""
+            if (game.state == .draw) {
+                gameLabelText = "It's a Draw!"
+            } else {
+                gameLabelText = "\(game.state == GameState.crossWon ? "Cross" : "Naught") Won"
+            }
+            gameStateLabel.text = gameLabelText
+        } else {
+            gameStateLabel.text = "\(game.currentTurn.symbol)'s Turn"
+        }
+        
         topLeftButton.setTitle(game.board.getSquareBy(identifier: .topLeft).symbol, for: .normal)
         topMiddleButton.setTitle(game.board.getSquareBy(identifier: .topMiddle).symbol, for: .normal)
         topRightButton.setTitle(game.board.getSquareBy(identifier: .topRight).symbol, for: .normal)

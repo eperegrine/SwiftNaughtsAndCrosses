@@ -157,6 +157,12 @@
                                     <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tlX-p9-Pgz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O's Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ute-2e-jN9">
+                                <rect key="frame" x="106.66666666666667" y="201" width="161.66666666666663" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -164,6 +170,8 @@
                             <constraint firstItem="vfP-dM-6zS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HHb-aF-chR"/>
                             <constraint firstAttribute="bottom" secondItem="vfP-dM-6zS" secondAttribute="bottom" id="YFq-Or-qFO"/>
                             <constraint firstItem="wwO-BK-fos" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="btR-U5-ddW"/>
+                            <constraint firstItem="wwO-BK-fos" firstAttribute="top" secondItem="ute-2e-jN9" secondAttribute="bottom" constant="20" id="k6Z-bC-spH"/>
+                            <constraint firstItem="ute-2e-jN9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rMB-SU-wAq"/>
                             <constraint firstItem="wwO-BK-fos" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ujd-u6-urp"/>
                             <constraint firstItem="vfP-dM-6zS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wxW-np-ENz"/>
                         </constraints>
@@ -173,6 +181,7 @@
                         <outlet property="bottomLeftButton" destination="W74-og-V0a" id="R77-sS-Sli"/>
                         <outlet property="bottomMiddleButton" destination="aBB-Sd-L5P" id="h8I-4m-PEr"/>
                         <outlet property="bottomRightButton" destination="3z0-PU-hdu" id="MTV-tE-zLa"/>
+                        <outlet property="gameStateLabel" destination="ute-2e-jN9" id="KVd-Ik-YpB"/>
                         <outlet property="middleButton" destination="0Pt-s7-f4x" id="lp2-vi-fC7"/>
                         <outlet property="middleLeftButton" destination="wbv-4s-cEg" id="XdK-RH-bN9"/>
                         <outlet property="middleRightButton" destination="YFj-La-31U" id="onP-cE-DoD"/>
@@ -183,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
+            <point key="canvasLocation" x="-602" y="228"/>
         </scene>
     </scenes>
 </document>
