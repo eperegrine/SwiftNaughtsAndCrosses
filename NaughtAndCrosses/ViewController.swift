@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var gameStateLabel: UILabel!
     
     @IBOutlet weak var topLeftButton: UIButton!
@@ -23,6 +24,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomRightButton: UIButton!
     
     let game = Game()
+    
+    let runningColour = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    let runningTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    let drawColour = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+    let drawTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    let wonColour = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+    let wonTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,12 +74,18 @@ class ViewController: UIViewController {
             var gameLabelText = ""
             if (game.state == .draw) {
                 gameLabelText = "It's a Draw!"
+                baseView.backgroundColor = drawColour
+                gameStateLabel.textColor = drawTextColor
             } else {
+                baseView.backgroundColor = wonColour
+                gameStateLabel.textColor = wonTextColor
                 gameLabelText = "\(game.state == GameState.crossWon ? "Cross" : "Naught") Won"
             }
             gameStateLabel.text = gameLabelText
         } else {
             gameStateLabel.text = "\(game.currentTurn.symbol)'s Turn"
+            baseView.backgroundColor = runningColour
+            gameStateLabel.textColor = runningTextColor
         }
         
         topLeftButton.setTitle(game.board.getSquareBy(identifier: .topLeft).symbol, for: .normal)

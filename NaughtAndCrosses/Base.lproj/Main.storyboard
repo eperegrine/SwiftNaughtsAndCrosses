@@ -178,6 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="baseView" destination="8bC-Xf-vdC" id="AX6-8J-8xb"/>
                         <outlet property="bottomLeftButton" destination="W74-og-V0a" id="R77-sS-Sli"/>
                         <outlet property="bottomMiddleButton" destination="aBB-Sd-L5P" id="h8I-4m-PEr"/>
                         <outlet property="bottomRightButton" destination="3z0-PU-hdu" id="MTV-tE-zLa"/>
