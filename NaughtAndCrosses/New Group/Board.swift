@@ -36,6 +36,29 @@ enum SquareState {
             self = .Naught
         }
     }
+    
+    static func CheckLine(_ squares: [SquareState]) -> Bool {
+        let amt = squares.count
+        if (amt <= 1) {
+            return true
+        } else {
+            let first = squares.first!
+            if first.isTaken() {
+                var allMatch = true
+                for sq in squares {
+                    if sq != first {
+                        allMatch = false
+                        break
+                    }
+                }
+                return allMatch
+            } else { return false }
+        }
+    }
+    
+    static func CheckLine(_ squares: SquareState...) -> Bool {
+        return CheckLine(squares)
+    }
 }
 
 enum SquareIdentifier {
@@ -71,6 +94,14 @@ class Board {
         return squares[id]!
     }
     
+    func getSquaresWith(identifiers: SquareIdentifier...) -> [SquareState] {
+        var squareList: [SquareState] = []
+        for id in identifiers {
+            squareList.append(getSquareBy(identifier: id))
+        }
+        return squareList
+    }
+    
     //Selects a board slot and returns a boolean about whether the box could be check, will reutrn false if it was
     func selectSlot(at sqId: SquareIdentifier, for turnType: TurnType) -> Bool {
         var square = squares[sqId]!
@@ -95,6 +126,14 @@ class Board {
             if !sqState.isTaken() {
                 allTaken = false
                 break
+            }
+        }
+        
+        if (!allTaken) {
+            if (
+                SquareState.CheckLine(getSquaresWith(identifiers: .topLeft, .topMiddle, .topRight))
+                ) {
+                print("it works")
             }
         }
         

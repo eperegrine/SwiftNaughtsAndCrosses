@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A25BCBD2146BD9F0048BAE5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25BCBC2146BD9F0048BAE5 /* Game.swift */; };
 		6A48186121468ACE00BA5DE5 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48186021468ACE00BA5DE5 /* Board.swift */; };
+		6A6B188B2147BE97004E5784 /* NaughtAndCrossesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B188A2147BE97004E5784 /* NaughtAndCrossesTests.swift */; };
 		6A9F136B213BFAC600F9AEE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F136A213BFAC600F9AEE4 /* AppDelegate.swift */; };
 		6A9F136D213BFAC600F9AEE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F136C213BFAC600F9AEE4 /* ViewController.swift */; };
 		6A9F1370213BFAC600F9AEE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F136E213BFAC600F9AEE4 /* Main.storyboard */; };
@@ -16,9 +17,22 @@
 		6A9F1375213BFAC700F9AEE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F1373213BFAC700F9AEE4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6A6B188D2147BE97004E5784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A9F135F213BFAC600F9AEE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A9F1366213BFAC600F9AEE4;
+			remoteInfo = NaughtAndCrosses;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6A25BCBC2146BD9F0048BAE5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6A48186021468ACE00BA5DE5 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		6A6B18882147BE97004E5784 /* NaughtAndCrossesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaughtAndCrossesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6B188A2147BE97004E5784 /* NaughtAndCrossesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaughtAndCrossesTests.swift; sourceTree = "<group>"; };
+		6A6B188C2147BE97004E5784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A9F1367213BFAC600F9AEE4 /* NaughtAndCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaughtAndCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9F136A213BFAC600F9AEE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A9F136C213BFAC600F9AEE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6A6B18852147BE97004E5784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6A9F1364213BFAC600F9AEE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,10 +70,20 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		6A6B18892147BE97004E5784 /* NaughtAndCrossesTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A6B188A2147BE97004E5784 /* NaughtAndCrossesTests.swift */,
+				6A6B188C2147BE97004E5784 /* Info.plist */,
+			);
+			path = NaughtAndCrossesTests;
+			sourceTree = "<group>";
+		};
 		6A9F135E213BFAC600F9AEE4 = {
 			isa = PBXGroup;
 			children = (
 				6A9F1369213BFAC600F9AEE4 /* NaughtAndCrosses */,
+				6A6B18892147BE97004E5784 /* NaughtAndCrossesTests */,
 				6A9F1368213BFAC600F9AEE4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				6A9F1367213BFAC600F9AEE4 /* NaughtAndCrosses.app */,
+				6A6B18882147BE97004E5784 /* NaughtAndCrossesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +114,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6A6B18872147BE97004E5784 /* NaughtAndCrossesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A6B18912147BE97004E5784 /* Build configuration list for PBXNativeTarget "NaughtAndCrossesTests" */;
+			buildPhases = (
+				6A6B18842147BE97004E5784 /* Sources */,
+				6A6B18852147BE97004E5784 /* Frameworks */,
+				6A6B18862147BE97004E5784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A6B188E2147BE97004E5784 /* PBXTargetDependency */,
+			);
+			name = NaughtAndCrossesTests;
+			productName = NaughtAndCrossesTests;
+			productReference = 6A6B18882147BE97004E5784 /* NaughtAndCrossesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6A9F1366213BFAC600F9AEE4 /* NaughtAndCrosses */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A9F1379213BFAC700F9AEE4 /* Build configuration list for PBXNativeTarget "NaughtAndCrosses" */;
@@ -109,6 +159,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Emily Peregrine";
 				TargetAttributes = {
+					6A6B18872147BE97004E5784 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6A9F1366213BFAC600F9AEE4;
+					};
 					6A9F1366213BFAC600F9AEE4 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -128,11 +182,19 @@
 			projectRoot = "";
 			targets = (
 				6A9F1366213BFAC600F9AEE4 /* NaughtAndCrosses */,
+				6A6B18872147BE97004E5784 /* NaughtAndCrossesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6A6B18862147BE97004E5784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6A9F1365213BFAC600F9AEE4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +208,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6A6B18842147BE97004E5784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A6B188B2147BE97004E5784 /* NaughtAndCrossesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6A9F1363213BFAC600F9AEE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +228,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A6B188E2147BE97004E5784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A9F1366213BFAC600F9AEE4 /* NaughtAndCrosses */;
+			targetProxy = 6A6B188D2147BE97004E5784 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A9F136E213BFAC600F9AEE4 /* Main.storyboard */ = {
@@ -179,6 +257,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6A6B188F2147BE97004E5784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SHMMFJ7N9P;
+				INFOPLIST_FILE = NaughtAndCrossesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emilyperegrine.NaughtAndCrossesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NaughtAndCrosses.app/NaughtAndCrosses";
+			};
+			name = Debug;
+		};
+		6A6B18902147BE97004E5784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SHMMFJ7N9P;
+				INFOPLIST_FILE = NaughtAndCrossesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.emilyperegrine.NaughtAndCrossesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NaughtAndCrosses.app/NaughtAndCrosses";
+			};
+			name = Release;
+		};
 		6A9F1377213BFAC700F9AEE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -332,6 +450,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6A6B18912147BE97004E5784 /* Build configuration list for PBXNativeTarget "NaughtAndCrossesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A6B188F2147BE97004E5784 /* Debug */,
+				6A6B18902147BE97004E5784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6A9F1362213BFAC600F9AEE4 /* Build configuration list for PBXProject "NaughtAndCrosses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
