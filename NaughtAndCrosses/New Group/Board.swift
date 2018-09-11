@@ -133,7 +133,7 @@ class Board {
             return getSquareBy(identifier: .topLeft).gameState
         }
         //Horizontal Middle
-        if (SquareState.CheckLine(getSquaresWith(identifiers: .middleLeft, .middleRight, .middleRight))) {
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .middleLeft, .middle, .middleRight))) {
             return getSquareBy(identifier: .middleLeft).gameState
         }
         //Bottom

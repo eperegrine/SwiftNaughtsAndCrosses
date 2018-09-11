@@ -26,11 +26,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
+        checkGameState()
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
-        switch sender {
+        if (game.state.isOver) {
+            resetGame(self)
+        } else {
+            switch sender {
             case topLeftButton: selectSquare(identifier: .topLeft)
             case topMiddleButton: selectSquare(identifier: .topMiddle)
             case topRightButton: selectSquare(identifier: .topRight)
@@ -40,23 +43,25 @@ class ViewController: UIViewController {
             case bottomLeftButton: selectSquare(identifier: .bottomLeft)
             case bottomMiddleButton: selectSquare(identifier: .bottomMiddle)
             case bottomRightButton: selectSquare(identifier: .bottomRight)
-        default:
-            print("error out")
+            default:
+                print("error out")
+            }
         }
+       
     }
     
     @IBAction func resetGame(_ sender: Any) {
         game.reset()
-        updateView()
+        checkGameState()
     }
     
     
     public func selectSquare(identifier: SquareIdentifier) {
         game.selectSlot(at: identifier)
-        updateView()
+        checkGameState()
     }
     
-    func updateView() {
+    func checkGameState() {
         if (game.state.isOver) {
             var gameLabelText = ""
             if (game.state == .draw) {
