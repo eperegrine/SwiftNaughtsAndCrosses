@@ -28,6 +28,14 @@ enum SquareState {
         return self != .Empty
     }
     
+    var gameState: GameState {
+        if self == .Empty {
+            return .running
+        } else {
+            return self == .Cross ? .crossWon : .naughtWon
+        }
+    }
+    
     mutating func select(forTurn turnType: TurnType) {
         switch turnType {
         case .Cross:
@@ -119,21 +127,46 @@ class Board {
     }
     
     func getState() -> GameState {
-        //TODO: implement checks
+        
+        //Top Line
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .topLeft, .topMiddle, .topRight))) {
+            return getSquareBy(identifier: .topLeft).gameState
+        }
+        //Horizontal Middle
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .middleLeft, .middleRight, .middleRight))) {
+            return getSquareBy(identifier: .middleLeft).gameState
+        }
+        //Bottom
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .bottomLeft, .bottomMiddle, .bottomRight))) {
+            return getSquareBy(identifier: .bottomLeft).gameState
+        }
+        //Left
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .topLeft, .middleLeft, .bottomLeft))) {
+            return getSquareBy(identifier: .topLeft).gameState
+        }
+        //Vertical Middle
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .topMiddle, .middle, .bottomMiddle))) {
+            return getSquareBy(identifier: .topMiddle).gameState
+        }
+        //Right
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .topRight, .middleRight, .bottomRight))) {
+            return getSquareBy(identifier: .topRight).gameState
+        }
+        //LTR Diagonal
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .topLeft, .middle, .bottomRight))) {
+            return getSquareBy(identifier: .topLeft).gameState
+        }
+        //RTL Diagonal
+        if (SquareState.CheckLine(getSquaresWith(identifiers: .topRight, .middle, .bottomLeft))) {
+            return getSquareBy(identifier: .topRight).gameState
+        }
+        
         var allTaken = true
         
         for (_, sqState) in squares {
             if !sqState.isTaken() {
                 allTaken = false
                 break
-            }
-        }
-        
-        if (!allTaken) {
-            if (
-                SquareState.CheckLine(getSquaresWith(identifiers: .topLeft, .topMiddle, .topRight))
-                ) {
-                print("it works")
             }
         }
         
